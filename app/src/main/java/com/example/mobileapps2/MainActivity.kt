@@ -1,22 +1,12 @@
 package com.example.mobileapps2
-
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
-import com.example.mobileapps2.databinding.ActivityMainBinding
-import androidx.fragment.app.Fragment
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import androidx.core.view.WindowInsetsCompat
 import android.util.Log
 
 class MainActivity : AppCompatActivity() {
@@ -38,16 +28,13 @@ class MainActivity : AppCompatActivity() {
                         replace<FragmentA>(R.id.fragment_container_view)
                     }
                 }
-
                 var currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container_view)
 
                 if (currentFragment is FragmentA) {
                     replace<FragmentB>(R.id.fragment_container_view)
                     addToBackStack(null)
                 }
-                else{
-                    supportFragmentManager.popBackStack()
-                }
+                else supportFragmentManager.popBackStack()
             }
         }
     }

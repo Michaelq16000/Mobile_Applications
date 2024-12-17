@@ -1,5 +1,4 @@
 package com.example.mobileapps2
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.util.Log
