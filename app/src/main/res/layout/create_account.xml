@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/adventure_map"
+        android:layout_width="321dp"
+        android:layout_height="251dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="42dp"
+        android:contentDescription="The main image with some boat and mountains and stuff"
+        android:scaleType="fitCenter"
+        android:src="@drawable/adventure_map2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/HigherTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="82dp"
+        android:text="Welcome back"
+        app:layout_constraintBottom_toBottomOf="@+id/adventure_map"
+        app:layout_constraintStart_toStartOf="@+id/adventure_map" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="LowerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sign in to access your account"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_field"
+        style="@style/InputFieldStyle"
+        android:hint="Enter your email"
+        app:endIconDrawable="@drawable/user"
+        app:endIconMode="custom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_field"
+        style="@style/InputFieldStyle"
+        android:layout_marginTop="25dp"
+        android:width="24dp"
+        android:height="24dp"
+        android:hint="Password"
+        app:endIconDrawable="@drawable/lock"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_field">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/ForgotPasswordText"
+        style="@style/PurpleText"
+        android:layout_width="75dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Forgot password?"
+        app:layout_constraintEnd_toEndOf="@+id/password_field"
+        app:layout_constraintTop_toBottomOf="@+id/password_field" />
+
+    <CheckBox
+        android:id="@+id/remember_me_checkbox"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/password_field"
+        app:layout_constraintTop_toBottomOf="@+id/password_field"
+        android:button="@drawable/rectangle"
+        android:textSize="12sp"
+        android:paddingStart="4dp" />
+
+    <TextView
+        android:id="@+id/RememberMe"
+        style="@style/RememberMe"
+        android:layout_width="60dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="5dp"
+        android:text="Remember me"
+        app:layout_constraintStart_toEndOf="@+id/remember_me_checkbox"
+        app:layout_constraintTop_toTopOf="@+id/remember_me_checkbox" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_button"
+        style="@style/BigPurpleButton"
+        android:layout_marginBottom="50dp"
+        android:text="Next"
+        app:icon="@drawable/vector"
+        app:iconGravity="textEnd"
+        app:endIconMode="custom"
+        app:iconSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/new_member"
+        android:layout_width="95dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="10dp"
+        android:text="New member?"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/next_button"
+        app:layout_constraintTop_toBottomOf="@+id/next_button" />
+
+    <TextView
+        android:id="@+id/register_now"
+        android:layout_width="95dp"
+        android:layout_height="19dp"
+        android:text="Register now"
+        android:textColor="#6C63FF"
+        android:textSize="13sp"
+        app:layout_constraintStart_toEndOf="@+id/new_member"
+        app:layout_constraintTop_toTopOf="@+id/new_member" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
