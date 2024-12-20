@@ -41,7 +41,7 @@
         android:id="@+id/email_field"
         style="@style/InputFieldStyle"
         android:hint="Enter your email"
-        app:endIconDrawable="@drawable/user"
+        app:endIconDrawable="@drawable/mail"
         app:endIconMode="custom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +97,7 @@
 
     <TextView
         android:id="@+id/RememberMe"
-        style="@style/RememberMe"
+        style="@style/TextUnderFields"
         android:layout_width="60dp"
         android:layout_height="10dp"
         android:layout_marginStart="5dp"
