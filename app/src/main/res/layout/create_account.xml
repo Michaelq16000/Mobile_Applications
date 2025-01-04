@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView"
         style="@style/HigherTitle"
         android:textSize="36sp"
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/adventure_map"
         app:layout_constraintStart_toStartOf="@+id/adventure_map" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView2"
         style="LowerTitle"
         android:layout_width="wrap_content"
@@ -120,7 +120,7 @@
         android:textSize="12sp"
         android:paddingStart="4dp" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/terms_conditions_text"
         style="@style/TextUnderFields"
         android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
         app:layout_constraintStart_toEndOf="@+id/terms_conditions_checkbox"
         app:layout_constraintTop_toTopOf="@+id/terms_conditions_checkbox" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/terms_text"
         style="@style/PurpleText"
         android:layout_width="wrap_content"
@@ -139,7 +139,7 @@
         app:layout_constraintStart_toEndOf="@+id/terms_conditions_text"
         app:layout_constraintTop_toTopOf="@+id/terms_conditions_text"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/terms_conditions_and_text"
         style="@style/TextUnderFields"
         android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
         app:layout_constraintStart_toEndOf="@+id/terms_text"
         app:layout_constraintTop_toTopOf="@+id/terms_text" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/conditions_text"
         style="@style/PurpleText"
         android:layout_width="wrap_content"
@@ -157,7 +157,7 @@
         app:layout_constraintStart_toEndOf="@+id/terms_conditions_and_text"
         app:layout_constraintTop_toTopOf="@+id/terms_conditions_and_text"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/terms_conditions_dot_text"
         style="@style/TextUnderFields"
         android:layout_width="wrap_content"
@@ -180,7 +180,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/already_a_member"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -192,7 +192,7 @@
         app:layout_constraintStart_toStartOf="@+id/next_button"
         app:layout_constraintTop_toBottomOf="@+id/next_button" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/log_in"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
