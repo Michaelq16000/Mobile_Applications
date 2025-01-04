@@ -109,7 +109,6 @@
         android:id="@+id/next_button"
         style="@style/BigPurpleButton"
         android:layout_marginBottom="50dp"
-        android:text="Next"
         app:icon="@drawable/vector"
         app:iconGravity="textEnd"
         app:endIconMode="custom"
@@ -120,13 +119,11 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/new_member"
-        android:layout_width="95dp"
-        android:layout_height="0dp"
+        style="@style/TextUnderBPB"
         android:layout_marginStart="66dp"
         android:layout_marginTop="10dp"
         android:text="New member?"
         android:textColor="#000000"
-        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="@+id/next_button"
         app:layout_constraintTop_toBottomOf="@+id/next_button" />
 

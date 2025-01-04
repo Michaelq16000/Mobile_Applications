@@ -20,16 +20,26 @@
     <style name="PurpleText">
         <item name="android:textColor">#6C63FF</item>
         <item name="android:textSize">9sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">10dp</item>
     </style>
     <style name="TextUnderFields"><!--renamed from RememberMe in a commit-->
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">9sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">10dp</item>
     </style>
-    <style name="BigPurpleButton">
+    <style name="BigPurpleButton"><!--BPB-->
         <item name="android:background">#6C63FF</item>
         <item name="android:layout_width">300dp</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">#FCFCFC</item>
+        <item name="android:text">Next</item>
+    </style>
+    <style name="TextUnderBPB">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textSize">13sp</item>
     </style>
 </resources>
