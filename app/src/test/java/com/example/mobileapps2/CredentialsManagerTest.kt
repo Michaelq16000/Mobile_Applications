@@ -8,7 +8,7 @@ class CredentialsManagerTest {
 
     // Test empty email
     @Test
-    fun givenEmptyPassword_thenReturnFalse() {
+    fun givenEmptyEmail_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
         val isEmailNonEmpty = credentialsManager.isEmailNonEmpty("")
         assertEquals(false, isEmailNonEmpty)
@@ -22,7 +22,24 @@ class CredentialsManagerTest {
         assertEquals(false, isEmailValid)
     }
     // Test proper email
-
+    @Test
+    fun givenValidEmailFormat_thenReturnTrue() {
+        val credentialsManager = CredentialsManager()
+        val isEmailValid = credentialsManager.isEmailValid("w4w4w33w4#@gmail.com")
+        assertEquals(true, isEmailValid)
+    }
     // Test empty password
+    @Test
+    fun givenEmptyPassword_thenReturnFalse() {
+        val credentialsManager = CredentialsManager()
+        val isPasswordFilled = credentialsManager.isPasswordFilled("")
+        assertEquals(false, isPasswordFilled)
+    }
     // Test filled password
+    @Test
+    fun givenFilledPassword_thenReturnTrue() {
+        val credentialsManager = CredentialsManager()
+        val isPasswordFilled = credentialsManager.isPasswordFilled("wazzupimmap4ssw0rd")
+        assertEquals(true, isPasswordFilled)
+    }
 }
