@@ -1,6 +1,8 @@
 package com.example.mobileapps2
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.login_account)
 
+        credentialsManager = CredentialsManager()
         emailInputField = findViewById(R.id.email_field)
         emailEditText = findViewById(R.id.email_edit_text)
         passwordInputField = findViewById(R.id.password_field)
@@ -37,12 +40,17 @@ class LoginActivity : AppCompatActivity() {
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
-            checkCredentials(email, password)
+            if (checkCredentials(email, password)) {
+                Log.d("LoginActivity", "Credentials OK")
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
 
     }
 
-    private fun checkCredentials(email: String, password: String) {
+    private fun checkCredentials(email: String, password: String): Boolean {
         if (!credentialsManager.isEmailNonEmpty(email)) {
             emailInputField.error = "Email cannot be empty"
         } else if (!credentialsManager.isEmailValid(email)) {
@@ -55,7 +63,8 @@ class LoginActivity : AppCompatActivity() {
         } else {
             passwordInputField.error = null
         }
-
+        Log.d("LoginActivity", "Credentials checked")
+        return (emailInputField.error == null && passwordInputField.error == null)
     }
 
 }
