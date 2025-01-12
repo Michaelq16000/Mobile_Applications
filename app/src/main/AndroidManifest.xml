@@ -19,6 +19,9 @@
             android:name=".FragmentA"
             android:exported="false" />
         <activity
+            android:name=".LoginActivity"
+            android:exported="true"/>
+        <activity
             android:name=".FragmentActivity"
             android:exported="false" />
         <activity
