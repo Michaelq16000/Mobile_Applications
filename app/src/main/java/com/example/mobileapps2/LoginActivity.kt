@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var passwordInputField: TextInputLayout
     private lateinit var passwordEditText: TextInputEditText
     private lateinit var loginButton: Button
+    private lateinit var registerNowTextbutton: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
         passwordInputField = findViewById(R.id.password_field)
         passwordEditText = findViewById(R.id.password_edit_text)
         loginButton = findViewById(R.id.next_button)
+        registerNowTextbutton = findViewById(R.id.register_now)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.activityLogin_main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -46,6 +49,12 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
+        }
+
+        registerNowTextbutton.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
     }
