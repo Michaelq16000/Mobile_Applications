@@ -126,7 +126,7 @@
         style="@style/TextUnderBPB"
         android:layout_marginStart="66dp"
         android:layout_marginTop="10dp"
-        android:text="New member? "
+        android:text="New member?"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/next_button"
         app:layout_constraintTop_toBottomOf="@+id/next_button" />
