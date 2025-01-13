@@ -2,6 +2,9 @@
 package com.example.mobileapps2
 
 class CredentialsManager {
+
+    private val accounts = mutableMapOf<String, String>()
+
     fun isEmailNonEmpty(email: String) : Boolean {
         return email.isNotEmpty()
     }
@@ -13,5 +16,21 @@ class CredentialsManager {
 
     fun isPasswordFilled(password: String): Boolean {
         return password.isNotEmpty()
+    }
+
+    fun isNameFilled(name: String): Boolean {
+        return name.isNotEmpty()
+    }
+
+    fun isPhoneFilled(phone: String): Boolean {
+        return phone.isNotEmpty()
+    }
+
+    fun register(tempEmail: String, password: String): Boolean {
+        val email = tempEmail.lowercase()
+
+        if (accounts.containsKey(email)) return false
+        accounts[email] = password
+        return true
     }
 }
