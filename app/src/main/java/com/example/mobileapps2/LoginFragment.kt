@@ -3,16 +3,16 @@ package com.example.mobileapps2
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import android.widget.Button
+import android.widget.TextView
 
-class LoginActivity : AppCompatActivity() {
+class LoginFragment : Fragment() {
 
     private lateinit var credentialsManager: CredentialsManager
     private lateinit var emailInputField: TextInputLayout
@@ -22,42 +22,35 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var registerNowTextbutton: TextView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.login_account)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.login_account, container, false)
+        credentialsManager = (activity as FragmentedAuthentication).credentialsManager
 
-        credentialsManager = CredentialsManager()
-        emailInputField = findViewById(R.id.email_field)
-        emailEditText = findViewById(R.id.email_edit_text)
-        passwordInputField = findViewById(R.id.password_field)
-        passwordEditText = findViewById(R.id.password_edit_text)
-        loginButton = findViewById(R.id.next_button)
-        registerNowTextbutton = findViewById(R.id.register_now)
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.activityLogin_main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        emailInputField = view.findViewById(R.id.email_field)
+        emailEditText = view.findViewById(R.id.email_edit_text)
+        passwordInputField = view.findViewById(R.id.password_field)
+        passwordEditText = view.findViewById(R.id.password_edit_text)
+        loginButton = view.findViewById(R.id.next_button)
+        registerNowTextbutton = view.findViewById(R.id.register_now)
 
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
             if (checkCredentials(email, password)) {
-                Log.d("LoginActivity", "Credentials OK")
-                val intent = Intent(this, MainActivity::class.java)
+                Log.d("LoginFragment", "Credentials OK")
+                val intent = Intent(requireContext(), MainActivity::class.java)
                 startActivity(intent)
-                finish()
+                activity?.finish()
             }
         }
 
         registerNowTextbutton.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-            finish()
+            (activity as FragmentedAuthentication).navigateToRegisterFragment()
         }
-
+        return view
     }
 
     private fun checkCredentials(email: String, password: String): Boolean {
@@ -73,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
         } else {
             passwordInputField.error = null
         }
-        Log.d("LoginActivity", "Credentials checked")
+        Log.d("LoginFragment", "Credentials checked")
         return (emailInputField.error == null && passwordInputField.error == null)
     }
 }

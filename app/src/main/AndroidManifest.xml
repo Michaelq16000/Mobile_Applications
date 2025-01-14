@@ -37,11 +37,8 @@
             android:name=".MainActivity"
             android:exported="true"/>
         <activity
-            android:name=".FragmentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FragmentsSample"
-            android:exported="false" />
+            android:name=".FragmentedAuthentication"
+            android:exported="true" />
 
     </application>
 
