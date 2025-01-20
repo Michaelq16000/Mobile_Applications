@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
             val password = passwordEditText.text.toString()
             if (checkCredentials(email, password)) {
                 Log.d("LoginActivity", "Credentials OK")
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, RecipesActivity::class.java)
                 startActivity(intent)
                 finish()
             }
